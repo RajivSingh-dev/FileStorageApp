@@ -25,7 +25,7 @@ public class AuthenticationService implements AuthenticationProvider {
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        User user = userMapper.getUser(username);
+        User user = userMapper.getUserByUsername(username);
         if (user != null) {
             String encodedSalt = user.getSalt();
             String hashedPassword = hashService.getHashedValue(password, encodedSalt);
