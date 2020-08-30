@@ -14,14 +14,16 @@ import java.util.ArrayList;
 
 @Service
 public class AuthenticationService implements AuthenticationProvider {
-    private UserMapper userMapper;
-    private HashService hashService;
+    private final UserMapper userMapper;
+    private final HashService hashService;
     public AuthenticationService(UserMapper userMapper, HashService hashService) {
         this.userMapper = userMapper;
         this.hashService = hashService;
     }
 
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+    @Override
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException
+    {
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
@@ -30,14 +32,14 @@ public class AuthenticationService implements AuthenticationProvider {
             String encodedSalt = user.getSalt();
             String hashedPassword = hashService.getHashedValue(password, encodedSalt);
             if (user.getPassword().equals(hashedPassword)) {
-                return new UsernamePasswordAuthenticationToken(user, password, new ArrayList<>());
+                return new UsernamePasswordAuthenticationToken(username, password, new ArrayList<>());
             }
         }
         return null;
     }
-
+    @Override
     public boolean supports(Class<?> authentication)
     {
-return authentication.equals(UsernamePasswordAuthenticationToken.class);
+        return authentication.equals(UsernamePasswordAuthenticationToken.class);
     }
 }
