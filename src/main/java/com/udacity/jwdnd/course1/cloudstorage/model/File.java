@@ -2,66 +2,67 @@ package com.udacity.jwdnd.course1.cloudstorage.model;
 
 public class File {
 
-    private Integer fileid;
-    private String docname;
-    private String contentype;
-    private String docsize;
-    private Integer userid;
-private byte[] filedata;
+    private Integer fileId;
+    private String name;
+    private String contentType;
+    private String fileSize;
+    private Integer userId;
+    private byte[] fileData;
 
-    public File(Integer fileid, String docname, String contenttype, String doctype, String doctize, Integer userid, byte[] filedata) {
-        this.fileid = fileid;
-        this.docname = docname;
-        this.contentype = contenttype;
-        this.docsize = docsize;
-        this.userid = userid;
-        this.filedata = filedata;
+    public File(Integer fileId, String name, String contentType, String fileSize, Integer userId, byte[] fileData) {
+        this.fileId = fileId;
+        this.name = name;
+        this.contentType = contentType;
+        this.fileSize = fileSize;
+        this.userId = userId;
+        this.fileData = fileData;
     }
 
     public Integer getFileId() {
-        return fileid;
+        return fileId;
     }
 
     public void setFileId(Integer fileId) {
-        this.fileid = fileId;
+        this.fileId = fileId;
     }
 
-    public String getDocName() {
-        return docname;
+    public String getName() {
+        return name;
     }
 
-    public void setDocName(String docName) {
-        this.docname = docName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getContentype() {
-        return contentype;
+    public String getContentType() {
+        return contentType;
     }
 
-    public void setContentype(String contentype) {
-        this.contentype = contentype;
-    }
-    public String getDocsize() {
-        return docsize;
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
-    public void setDocsize(String docsize) {
-        this.docsize = docsize;
+    public String getFileSize() {
+        return fileSize;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public void setFileSize(String fileSize) {
+        this.fileSize = fileSize;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public byte[] getFiledata() {
-        return filedata;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public void setFiledata(byte[] filedata) {
-        this.filedata = filedata;
+    public byte[] getFileData() {
+        return fileData;
+    }
+
+    public void setFileData(byte[] fileData) {
+        this.fileData = fileData;
     }
 }
