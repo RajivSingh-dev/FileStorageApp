@@ -1,5 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage.services;
 
+import com.google.common.io.ByteStreams;
 import com.udacity.jwdnd.course1.cloudstorage.mapper.FileMapper;
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import org.slf4j.Logger;
@@ -33,10 +34,10 @@ public class    FileService {
 
     public int uploadFile(Integer userId, MultipartFile fileUpload) {
         InputStream inputStream;
-        byte[] data = new byte[0];
+byte data[]=new byte[0];
         try {
             inputStream = fileUpload.getInputStream();
-            data = inputStream.readAllBytes();
+            data = ByteStreams.toByteArray(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
