@@ -7,10 +7,30 @@
         <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
 
         <title>Login</title>
+
+        <style type="text/css">
+
+            #login {
+                color: black;
+                margin-left: 5px;
+                font-size: 30px;
+                font-family: Serif;
+            }
+            #yourdrive{
+                color: #28a745;
+                margin-left: 500px;
+                font-size: 50px;
+                font-family: cursive;
+            }
+
+
+        </style>
+        <h1 id="yourdrive">YourDrive</h1>
     </head>
+
     <body class="p-3 mb-2 bg-light text-black">
         <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
-            <h1 class="display-5">Login</h1>
+            <h1 class="display-5" id="login">Login</h1>
             <form action="#" th:action="@{/login}" method="POST">
                 <div id="error-msg" th:if="${param.error}" class="alert alert-danger">
                     Invalid username or password

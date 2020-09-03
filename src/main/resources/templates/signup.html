@@ -7,6 +7,38 @@
         <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
 
         <title>Sign Up</title>
+        <style type="text/css">
+
+            #login {
+                color: black;
+                margin-left: 5px;
+                font-size: 24px;
+                font-family: Serif;
+            }
+            #yourdrive{
+                color: #28a745;
+                margin-left: 500px;
+                font-size: 50px;
+                font-family: cursive;
+            }
+
+
+        </style> <style type="text/css">
+        #signup {
+            color: black;
+            margin-left: 5px;
+            font-size: 30px;
+            font-family: Serif;
+        }
+        #yourdrive {
+            color: #28a745;
+            margin-left: 500px;
+            font-size: 50px;
+            font-family: cursive;
+        }
+
+    </style>
+        <h1 id="yourdrive">YourDrive</h1>
     </head>
     <body class="p-3 mb-2 bg-light text-black">
         <div class="container justify-content-center w-50 p-3" style="background-color: #eeeeee; margin-top: 5em;">
@@ -14,7 +46,7 @@
                 <label><a th:href="@{/login}">Back to Login</a></label>
             </div>
 
-            <h1 class="display-5">Sign Up</h1>
+            <h1 class="display-5" id="signup">Sign Up</h1>
             <form action="#"  th:action="@{/signup}" method="POST">
                 <div id="success-msg" th:if="${signupSuccess}" class="alert alert-dark">
                     You successfully signed up! Please continue to the <a id="login-link" th:href="@{/login}">login</a> page.
