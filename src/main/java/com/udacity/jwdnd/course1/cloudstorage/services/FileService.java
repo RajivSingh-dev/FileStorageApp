@@ -34,7 +34,7 @@ public class    FileService {
 
     public int uploadFile(Integer userId, MultipartFile fileUpload) {
         InputStream inputStream;
-        byte[] data = new byte[0];
+byte data[]=new byte[0];
         try {
             inputStream = fileUpload.getInputStream();
             data = ByteStreams.toByteArray(inputStream);
