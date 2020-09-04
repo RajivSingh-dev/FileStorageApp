@@ -18,7 +18,7 @@
             }
             #yourdrive{
                 color: #28a745;
-                margin-left: 500px;
+                margin-left: 300px;
                 font-size: 50px;
                 font-family: cursive;
             }
@@ -29,7 +29,7 @@
     </head>
 
     <body class="p-3 mb-2 bg-light text-black" >
-        <div id="padding" class="container justify-content-center w-75 p-3" style="background-color: #eeeeee; margin-top: 5em;">
+        <div id="padding" class="container justify-content-center w-100 h-500 p-3" style="background-color: #eeeeee; margin-top: 1em;">
             <h1 class="display-5" id="login">Login</h1>
             <form action="#" th:action="@{/login}" method="POST">
                 <div id="error-msg" th:if="${param.error}" class="alert alert-danger">
